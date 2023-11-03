@@ -1,0 +1,58 @@
+.message {
+  padding: 0 20px;
+  &__container {
+    display: flex;
+    align-items: end;
+    gap: 10px;
+
+    &_ai {
+      .message__text {
+        background: #f2f2f2;
+      }
+    }
+
+    &_person {
+      justify-content: end;
+
+      .message__text {
+        background: #3047ec;
+        color: #fff;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 300px;
+    border-radius: 6px;
+    padding: 7px 10px;
+    line-height: 140%;
+    font-weight: 300;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+  }
+
+  &__ai-label-container {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #e2e2e2;
+    height: 29px;
+    padding-top: 7px;
+    box-sizing: border-box;
+    margin-top: 7px;
+  }
+
+  &__ai-label {
+    font-size: 12px;
+    font-weight: 400;
+    color: #737373;
+
+    span {
+      padding: 1px 3px;
+      background-color: #737373;
+      color: white;
+      margin-right: 4px;
+      border-radius: 4px;
+    }
+  }
+}

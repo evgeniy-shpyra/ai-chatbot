@@ -1,0 +1,32 @@
+.simplebar-vertical{
+  margin-bottom: 13px !important;
+  margin-top: 5px !important;
+  opacity: 0;
+  transition: opacity 0.2s;
+  background: none !important;
+}
+
+.simplebar-scrollbar.simplebar-visible:before{
+  opacity: 0.2 !important;
+
+}
+.simplebar-scrollbar{
+  margin-bottom: 35px;
+  margin-top: 3px;
+  background: none !important;
+}
+
+.messages {
+  overflow: hidden;
+
+  &__container {
+    overflow: hidden;
+  }
+
+
+  &:hover {
+    .simplebar-track.simplebar-vertical {
+      opacity: 1;
+    }
+  }
+}
