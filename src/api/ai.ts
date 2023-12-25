@@ -1,10 +1,9 @@
-import { apiUrl } from ".";
+import { apiUrl, randomId } from ".";
 
 export const postMessage = async (message: string) => {
   const response = await fetch(`${apiUrl}/predict`, {
-    method: "POST",
-    mode: "cors",
-    body: JSON.stringify({ message }),
+    method: "POST", 
+    body: JSON.stringify({ message, id: randomId }),
     headers: {
       "Content-Type": "application/json",
     },

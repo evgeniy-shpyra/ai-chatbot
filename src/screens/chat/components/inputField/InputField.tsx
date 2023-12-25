@@ -41,8 +41,8 @@ const InputField: React.FC<InputFieldProps> = ({ handleSendMessage }) => {
     recalculateTextareaHeight();
   }, [message]);
 
-  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation();
+  const handleSubmit = async (e?: React.MouseEvent<HTMLButtonElement>) => {
+    e && e.stopPropagation();
 
     handleSendMessage(message);
   };
@@ -55,6 +55,13 @@ const InputField: React.FC<InputFieldProps> = ({ handleSendMessage }) => {
     e.stopPropagation();
   };
 
+  const handleKeyDown = (e:React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if(e.key === 'Enter'){
+      e.preventDefault()
+      handleSubmit()
+    }
+  }
+
   return (
     <div
       onClick={handleWrapperClick}
@@ -63,6 +70,7 @@ const InputField: React.FC<InputFieldProps> = ({ handleSendMessage }) => {
       })}
     >
       <textarea
+        onKeyDown={handleKeyDown}
         ref={textareaRef}
         onChange={handleInput}
         onClick={handleTextareaClick}

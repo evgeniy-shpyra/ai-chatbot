@@ -28,6 +28,7 @@ const Chat = () => {
     const response = postMessage(message);
 
     Promise.all([response, delay(2000)]).then((response) => {
+    // Promise.all([response]).then((response) => {
       const date = new Date(response[0].time).toISOString();
 
       chatContext.setData((prev) => ({
@@ -36,7 +37,7 @@ const Chat = () => {
           { type: "ai", time: date, text: response[0].answer },
         ],
         isLoading: false,
-      }));
+      })); 
       console.log(chatContext.data);
     });
   };
