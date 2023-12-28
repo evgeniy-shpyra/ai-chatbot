@@ -1,7 +1,7 @@
 import React from "react";
 import "./inputField.scss";
 import { SendIcon } from "../icons/Icons";
-import { ChatContext } from "../../../../App";
+import { ChatContext } from "../../../App";
 import cn from "classnames";
 
 interface InputFieldProps {
@@ -33,7 +33,7 @@ const InputField: React.FC<InputFieldProps> = ({ handleSendMessage }) => {
   };
 
   const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     setMessage(e.currentTarget.value);
   };
 
@@ -55,12 +55,12 @@ const InputField: React.FC<InputFieldProps> = ({ handleSendMessage }) => {
     e.stopPropagation();
   };
 
-  const handleKeyDown = (e:React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if(e.key === 'Enter'){
-      e.preventDefault()
-      handleSubmit()
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSubmit();
     }
-  }
+  };
 
   return (
     <div

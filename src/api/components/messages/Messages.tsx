@@ -1,7 +1,7 @@
 import React from "react";
 import "./messages.scss";
 import SimpleBar from "simplebar-react";
-import { ChatContext } from "../../../../App";
+import { ChatContext } from "../../../App";
 import "simplebar-react/dist/simplebar.min.css";
 import Message from "../message/Message";
 import Preloader from "../preloader/Preloader";
@@ -30,8 +30,6 @@ const Messages = () => {
         }}
         autoHide={false}
         // forceVisible="y"
-
-        
       >
         <div className="messages__container">
           {chatContext &&

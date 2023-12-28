@@ -3,6 +3,7 @@ import Chat from "./screens/chat/Chat";
 import "./app.scss";
 import { createContext } from "react";
 import { IStore } from "./types";
+import TestsAi from "./api/components/tests/TestsAi";
 
 interface IChatContext {
   data: IStore;
@@ -10,18 +11,7 @@ interface IChatContext {
 }
 
 const defaultValue: IStore = {
-  history: [
-    {
-      time: String(Date.now()),
-      text: "yoyoyoyooy",
-      type: "person",
-    },
-    {
-      time: String(Date.now()),
-      text: "yoyoyoyooy",
-      type: "ai",
-    },
-  ],
+  history: [],
   isLoading: false,
 };
 
@@ -35,6 +25,7 @@ function App() {
       <ChatContext.Provider value={{ data, setData }}>
         <Chat />
       </ChatContext.Provider>
+      <TestsAi />
     </div>
   );
 }

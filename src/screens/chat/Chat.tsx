@@ -1,9 +1,9 @@
 import React from "react";
 import "./chat.scss";
-import Header from "./components/header/Header";
-import Messages from "./components/messages/Messages";
-import InputField from "./components/inputField/InputField";
-import { postMessage } from "../../api/ai";
+import Header from "../../api/components/header/Header";
+import Messages from "../../api/components/messages/Messages";
+import InputField from "../../api/components/inputField/InputField";
+import { postMessage } from "../../api/api/ai";
 import { ChatContext } from "../../App";
 
 const delay = (time: number) =>
@@ -28,7 +28,7 @@ const Chat = () => {
     const response = postMessage(message);
 
     Promise.all([response, delay(2000)]).then((response) => {
-    // Promise.all([response]).then((response) => {
+      // Promise.all([response]).then((response) => {
       const date = new Date(response[0].time).toISOString();
 
       chatContext.setData((prev) => ({
@@ -37,7 +37,7 @@ const Chat = () => {
           { type: "ai", time: date, text: response[0].answer },
         ],
         isLoading: false,
-      })); 
+      }));
       console.log(chatContext.data);
     });
   };

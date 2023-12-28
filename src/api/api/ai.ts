@@ -8,6 +8,6 @@ export const postMessage = async (message: string) => {
       "Content-Type": "application/json",
     },
   });
-  const responseData: { answer: string, time: string } = await response.json();
+  const responseData: { answer: string, probability: number, time: string } = await response.json();
   return responseData;
 };
